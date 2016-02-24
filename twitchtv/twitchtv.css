@@ -1,0 +1,66 @@
+html {
+    border: dashed red 0px;
+    height: 100%;
+    margin-bottom: 0px;
+}
+body {
+    border: dashed blue 0px;
+    height: 100%;
+    margin-bottom: 0;
+}
+.container-fluid#background {
+    border: dashed green 0px;
+    background-size: cover;
+    margin-bottom: 0%;
+}
+.container-fluid#content {
+    border: dashed yellow 0px;
+    height: 100%;
+    background-size: cover;
+    width: 52%;
+    background-color: rgba(256,256,256,1);
+    padding: 0;
+}
+.btn#button_list {
+    border: solid red 0px;
+    height: 7%;
+}
+.contain#title {
+    border: dotted red 0px;
+    height: 15%;
+    text-align: center;
+    background-color: #343436;
+}
+.contain#title h1{
+    color: white;
+    border: dotted blue 0px;
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
+    margin: 5%;
+}
+.contain#stream {
+    border: dotted white 1px;
+    height: 78%;
+    overflow-y: scroll;
+    overflow: auto;
+}
+.contain#stream .item {
+    border: dotted red 0px;
+}
+.contain#stream th{
+    text-align: center;
+}
+.contain#stream .item td{
+    width: 33%;
+    text-align: center;
+}
+.contain#stream .item img{
+    border-radius: 50%;
+    width: 20%;
+    border: blue double 0px;
+}
+.contain#stream .item p{
+    border: dotted green 0px;
+}

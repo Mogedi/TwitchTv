@@ -1,0 +1,79 @@
+<html lang="en">
+    
+    <!-- Critique -->
+    <!--Mogedi - I am not familiar with this project, since I haven't done it yet, but it looks like it is working. (It didn't open the stream that I clicked on that was supposedly active, but I don't know if you need to have an account or something to log in there?) Anyway, my main question is about responsive behavior. If you make the window really narrow, it puts scroll bars on the screen, which is okay. But I wondered if there was any thought to making this a little different in that mode, somehow changing up the layout of the columns or something? It looks fine, though, if it's working the way that they require the project to work.
+I just decided to peek at the code - there is a syntax error in your javascript code. I'm not sure if that is impacting the behavior in any significant way, but in the CodePen JS panel it shows up with a red  and an "unexpected string" error.
+Another thing is that if you are strictly developing on CodePen, they use a template to generate the HTML page, filling in all of the sections from the various panel configuration settings and adding your CSS into the appropriate place. With the setup that you have, your CSS styles are being inserted at the top of the page, there are multiple <body> sections, some <script> tag in there after the closing </html> tag, maybe a few other things that are not valid HTML. If you are developing elsewhere and just pasting into CodePen, you might want to see if these things are affecting the way your page functions on CodePen when someone is viewing it?
+I hope those are helpful comments?-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Twitch TV</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        
+        <!-- Personal CSS -->
+        <link rel="stylesheet" href="twitchtv.css">
+        
+        <script>
+            var backgrounds =
+            ["http://infinarium.com/wp-content/uploads/2013/12/Halo-game-series-background-for-Infinarium.jpg",
+             "http://images5.alphacoders.com/533/533756.jpg",
+             "http://images7.alphacoders.com/423/423190.jpg",
+             "http://www.twitterevolutions.com/bgs/creed.jpg",
+             "https://i.ytimg.com/vi/8RZRE0M3Hvc/maxresdefault.jpg",
+             "http://i.cdn.turner.com/cnn/.e/img/3.0/branding/backgrounds/instant-startups/instant-startups-background-full-169.png",
+             "http://4.bp.blogspot.com/-kZqHGVIkfIg/VQFZx9KYf9I/AAAAAAAAV2A/EUTOT8H-mDU/s1600/Suru_Wallpaper_Desktop_4096x2304_Purple.png",
+             "http://cdn0.dailydot.com/cache/32/91/3291d8032d20245571d4f02d3dc71317.jpg",
+             "http://images2.alphacoders.com/148/14862.jpg",
+             "http://www.hdwallpapers.in/walls/art_game_scene-HD.jpg"];
+            
+            var index = Math.floor((Math.random() * (backgrounds.length - 1))) + 1;
+            
+            console.log(backgrounds[index]);
+            
+        </script>
+        
+    </head>
+    
+    <body >
+        
+        <div class="container-fluid" id="background">
+            <div class="container-fluid" id="content">
+                <div class="contain" id="title">
+                    <h1><u>Twitch Streamers</u></h1>
+                </div>
+                <div class="btn btn-group col-xs-12" id="button_list">
+                    <button class="btn col-sm-4 col-xs-4" onclick="All()">All</button>
+                    <button class="btn col-sm-4 col-xs-4" onclick="Online()">Online</button>
+                    <button class="btn col-sm-4 col-xs-4" onclick="Offline()">Offline</button>
+                </div>
+                <div class="contain" id="stream">
+                    <div class="table-responsive">
+                        <table class="table">
+                        <thead style= "margin:5px">
+                            <tr>
+                              <th>Picture</th>
+                              <th>UserName</th>
+                              <th>Description</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <script>
+            document.getElementById("background").style.backgroundImage = 'url(' + backgrounds[index] + ')';
+        </script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://npmcdn.com/masonry-layout@4.0.0/dist/masonry.pkgd.min.js"></script>
+        <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="twitchtv.js"></script>
+    </body>
+</html>
